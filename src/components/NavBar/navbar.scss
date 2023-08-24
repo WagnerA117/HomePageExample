@@ -1,27 +1,45 @@
-.header {
+//css styles in hierachy of html, eg parent then child.
+
+.menu-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(112, 37, 155, 1);
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.navbar {
 	align-items: center;
 	background-color: rgba(112, 37, 155, 1);
 	display: flex;
-	height: 53px;
+	min-height: 80px;
 	justify-content: space-between;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	width: 100%;
-	margin-top: 32px;
-	margin-bottom: 32px;
+	width: 80%;
+	padding: 8px, 20px, 8px, 20px;
 }
 
-.logo {
+.logo-container {
 	cursor: pointer;
 	object-fit: contain;
-}
-
-.logout-button {
 }
 
 .nav-buttons {
 	display: flex;
 	flex-direction: row;
+}
+
+.nav-buttons .button {
+	transition: background-color 0.5s ease;
+	text-align: center;
+}
+
+.nav-buttons .button:hover {
+	background-color: rgba(153, 57, 208, 1);
+	width: 83px;
+	height: 40px;
+	border-radius: 6px;
 }

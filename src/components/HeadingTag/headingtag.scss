@@ -1,0 +1,20 @@
+.heading-tag-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.header-rectangle {
+	height: 4px;
+	width: 40px;
+	background-color: rgba(209, 0, 201, 1);
+}
+
+h5 {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+	letter-spacing: 0em;
+	text-align: left;
+	padding-left: 10px;
+}

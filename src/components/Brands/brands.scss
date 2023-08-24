@@ -1,0 +1,26 @@
+.brand-container {
+	margin: 4%;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+}
+
+.brands-display {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+
+	@media (max-width: 1280px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (max-width: 768px) {
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	h1 {
+		width: 100%;
+		text-align: left;
+	}
+}

@@ -1,4 +1,3 @@
-import {LoadingSpinner} from "..";
 import "./button.scss";
 
 interface ButtonProps {
@@ -8,7 +7,8 @@ interface ButtonProps {
 		| "tertiary"
 		| "sucess"
 		| "danger"
-		| "card-button";
+		| "card-button"
+		| "inverted";
 
 	primary?: boolean;
 
@@ -25,7 +25,7 @@ interface ButtonProps {
 export const Button = ({
 	backgroundColor,
 	label,
-	loading,
+
 	primary = false,
 	size = "medium",
 	variant,
@@ -40,7 +40,7 @@ export const Button = ({
 			style={{backgroundColor}}
 			{...props}
 		>
-			{loading ? <LoadingSpinner></LoadingSpinner> : label}
+			{label}
 		</button>
 	);
 };
