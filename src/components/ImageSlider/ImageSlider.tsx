@@ -15,20 +15,13 @@ interface Image {
 	description: string;
 }
 
-//interface ImageSliderProps {
-//	images?: Image[] | [];
-//}
-
 export const ImageSlider = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [images, setImages] = useState<Image[]>();
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	useEffect(() => {
-		//setLoading(true);
-
-		setTimeout(() => {}, 2000);
-
+		setLoading(true);
 		axios
 			.get("/api")
 			.then((res) => {
@@ -38,8 +31,6 @@ export const ImageSlider = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-
-		//setLoading(false);
 	}, []);
 
 	const previousImage = () => {
@@ -53,8 +44,6 @@ export const ImageSlider = () => {
 		setCurrentIndex(newIndex);
 	};
 
-	console.log(currentIndex, "index");
-
 	return (
 		<div className="container">
 			<div>
@@ -66,7 +55,7 @@ export const ImageSlider = () => {
 
 				{images ? (
 					<Card
-						loading={true}
+						loading={loading}
 						description={images?.[currentIndex].description}
 						image={images?.[currentIndex].imageUrl}
 						title={images?.[currentIndex].title}

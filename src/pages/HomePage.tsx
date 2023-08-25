@@ -44,48 +44,50 @@ export const HomePage = () => {
 				</section>
 
 				<footer className="footer">
-					<HeadingTag heading="Contact us" />
+					<div style={{margin: "2%"}}>
+						<HeadingTag heading="Contact us" />
 
-					<div className="contact-details">
-						<h2 className="contact-header">
-							Have a project in mind? <br></br> Let's make it happen
-						</h2>
+						<div className="contact-details">
+							<h2 className="contact-header">
+								Have a project in mind? <br></br> Let's make it happen
+							</h2>
 
-						<p className="address">
-							22 Street Name, Suburb, 8000,
-							<br /> Cape Town, South Africa <br /> +27 21 431 0001
-							<br /> <a>enquirie@website.co.za</a>
-						</p>
-					</div>
+							<p className="address">
+								22 Street Name, Suburb, 8000,
+								<br /> Cape Town, South Africa <br /> +27 21 431 0001
+								<br /> <a>enquirie@website.co.za</a>
+							</p>
+						</div>
 
-					<div className="links-section">
-						<p>
-							Terms of service
-							<br /> Privacy policy
-							<br /> Impressum
-						</p>
+						<div className="links-section">
+							<p>
+								Terms of service
+								<br /> Privacy policy
+								<br /> Impressum
+							</p>
 
-						<p>
-							Facebook <br />
-							Instagram
-							<br /> Twitter
-						</p>
+							<p>
+								Facebook <br />
+								Instagram
+								<br /> Twitter
+							</p>
 
-						<p>
-							Github <br />
-							Linkedin <br />
-							Teams
-						</p>
+							<p>
+								Github <br />
+								Linkedin <br />
+								Teams
+							</p>
 
-						<p>
-							Youtube
-							<br /> Behance <br />
-							Dribbble
-						</p>
+							<p>
+								Youtube
+								<br /> Behance <br />
+								Dribbble
+							</p>
 
-						<p className="jobs">
-							Explore open jobs ©2000—2023 <p></p>Company Name
-						</p>
+							<p className="jobs">
+								Explore open jobs ©2000—2023 <p></p>Company Name
+							</p>
+						</div>
 					</div>
 				</footer>
 			</div>

@@ -1,4 +1,4 @@
-import {HeadingTag, LoadingSpinner} from "..";
+import {HeadingTag} from "..";
 
 import "./card.scss";
 
@@ -9,12 +9,7 @@ interface CardProps {
 	loading?: boolean;
 }
 
-export const Card = ({description, image, title, loading}: CardProps) => {
-	console.log(loading);
-
-	//if (loading) {
-	//	return <LoadingSpinner />;
-	//}
+export const Card = ({description, image, title}: CardProps) => {
 	return (
 		<div className="card">
 			<div className="card-content">
