@@ -1,3 +1,11 @@
+.spinner-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 1080px;
+	height: 640px;
+	background-color: rgba(235, 255, 252, 1);
+}
 .loading-spinner {
 	position: relative;
 	display: inline-block;
@@ -26,7 +34,4 @@
 	100% {
 		transform: rotate(360deg);
 	}
-}
-.spinner-container {
-	width: 148px;
 }

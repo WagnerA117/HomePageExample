@@ -7,6 +7,7 @@ import {HeadingTag} from "../HeadingTag/HeadingTag";
 
 import {Card} from "../Card/Card";
 import {Button} from "../Button/Button";
+import {LoadingSpinner} from "..";
 
 interface Image {
 	imageUrl: string;
@@ -24,6 +25,10 @@ export const ImageSlider = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	useEffect(() => {
+		//setLoading(true);
+
+		setTimeout(() => {}, 2000);
+
 		axios
 			.get("/api")
 			.then((res) => {
@@ -33,26 +38,19 @@ export const ImageSlider = () => {
 			.catch((err) => {
 				console.log(err);
 			});
+
+		//setLoading(false);
 	}, []);
 
-	console.log(images, "images in image slider");
-
-	if (loading) {
-		return <h1>Loading...</h1>;
-	}
-
-	const goToPrevious = () => {
+	const previousImage = () => {
 		const isFirstImage = currentIndex === 0;
 		const newIndex = isFirstImage ? images!.length - 1 : currentIndex - 1;
 		setCurrentIndex(newIndex);
 	};
-	const goToNext = () => {
+	const nextImage = () => {
 		const isLastImage = currentIndex === images!.length - 1;
 		const newIndex = isLastImage ? 0 : currentIndex + 1;
 		setCurrentIndex(newIndex);
-	};
-	const goToImage = (imageIndex: number) => {
-		setCurrentIndex(imageIndex);
 	};
 
 	console.log(currentIndex, "index");
@@ -64,13 +62,20 @@ export const ImageSlider = () => {
 			</div>
 
 			<div className="slider-container">
-				<Button label="Previous" onClick={goToPrevious} />
-				<Card
-					description={images?.[0].description}
-					image={images?.[currentIndex].imageUrl}
-					title={images?.[currentIndex].title}
-				></Card>
-				<Button label="Next" onClick={goToNext} />
+				<Button label="Previous" onClick={previousImage} />
+
+				{images ? (
+					<Card
+						loading={true}
+						description={images?.[currentIndex].description}
+						image={images?.[currentIndex].imageUrl}
+						title={images?.[currentIndex].title}
+					/>
+				) : (
+					<LoadingSpinner />
+				)}
+
+				<Button label="Next" onClick={nextImage} />
 			</div>
 		</div>
 	);
