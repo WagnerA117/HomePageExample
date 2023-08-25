@@ -9,6 +9,11 @@ To Run this project
 
 Should the be an issue running the api call, ensure the vite config has the following set up
 
+1. Open Docker Desktop
+2. Run 'docker build -t homepage . '
+3. Run " docker run -p 5173:5173 homepage
+4. Open localhost:5173 in your browser
+
 # vite.config.js
 
 import {defineConfig} from "vite";
