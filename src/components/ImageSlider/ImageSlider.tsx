@@ -6,7 +6,7 @@ import axios from "axios";
 import {HeadingTag} from "../HeadingTag/HeadingTag";
 
 import {Card} from "../Card/Card";
-import {Button} from "../Button/Button";
+
 import {LoadingSpinner} from "..";
 
 interface Image {
@@ -46,25 +46,23 @@ export const ImageSlider = () => {
 
 	return (
 		<div className="container">
-			<div>
+			<div style={{marginBottom: "2%"}}>
 				<HeadingTag heading="Case studies" />
 			</div>
 
 			<div className="slider-container">
-				<Button label="Previous" onClick={previousImage} />
-
 				{images ? (
 					<Card
 						loading={loading}
 						description={images?.[currentIndex].description}
 						image={images?.[currentIndex].imageUrl}
 						title={images?.[currentIndex].title}
+						previousImage={previousImage}
+						nextImage={nextImage}
 					/>
 				) : (
 					<LoadingSpinner />
 				)}
-
-				<Button label="Next" onClick={nextImage} />
 			</div>
 		</div>
 	);
